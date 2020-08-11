@@ -2,7 +2,7 @@
 
 This is a proof of concept repository for demonstrating:
 
-- Deployment of Azure resources using **Infrastructure as Code** approach using Terraform.
+- Deployment of Azure resources by implementing **Infrastructure as Code** methodology using Terraform.
 
 - Definition and assignment of **Policy Objects** to Azure resources.
 
