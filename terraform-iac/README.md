@@ -198,4 +198,10 @@ terraform apply -var-file="secret.tfvars" -var-file="production.tfvars"
 **Notes**:
 
 Alternatively you can declare sensitive variables in the `variables.tf` file without assigning values to them in the `*.tfvars` file. 
-In this case Terraform will prompt you for missing values. This project is using this approach.  
+In this case Terraform will prompt you for missing values. This project is using this approach. 
+
+### Additional resources
+
+To see a full list of Terraform Azure resource definitions please see [Azure Provider](https://www.terraform.io/docs/providers/azurerm/index.html) 
+
+For documents about Terraform in Azure please see [Terraform-on-Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/) 
