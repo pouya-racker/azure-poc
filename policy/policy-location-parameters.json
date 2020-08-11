@@ -1,0 +1,19 @@
+{
+    "allowedLocations": {
+      "type": "Array",
+      "metadata": {
+        "displayName": "Allowed locations",
+        "description": "The list of allowed locations for resources.",
+        "strongType": "location"
+      },
+      "allowedValues": [
+        "eastus2",
+        "eastus",
+        "westus2",
+        "westus"
+      ],
+      "defaultValue": [
+        "eastus"
+      ]
+    }
+}

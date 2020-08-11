@@ -1,0 +1,38 @@
+{
+    "if": {
+        "allOf": [
+            {
+                "field": "type",
+                "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+            },
+
+            {
+                "not": {
+                    "field": "name",
+                    "like": "[concat('rg-cus-prod', '*')]"
+                }
+            },
+            {
+                "not": {
+                    "field": "name",
+                    "like": "[concat('rg-cus-nonprod', '*')]"
+                }
+            },
+            {
+                "not": {
+                    "field": "name",
+                    "like": "[concat('rg-scus-prod', '*')]"
+                }
+            },
+            {
+                "not": {
+                    "field": "name",
+                    "like": "[concat('rg-scus-nonprod', '*')]"
+                }
+            }
+        ]
+    },
+    "then": {
+        "effect": "deny"
+    }
+}

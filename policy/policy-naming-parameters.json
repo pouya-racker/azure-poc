@@ -1,0 +1,16 @@
+{
+        "prefix": {
+                "type": "String",
+                "metadata": {
+                        "displayName": "Prefix",
+                        "description": "Resource name prefix"
+                }
+        },
+        "suffix": {
+                "type": "String",
+                "metadata": {
+                        "displayName": "Suffix",
+                        "description": "Resource name suffix"
+                }
+        }
+}
