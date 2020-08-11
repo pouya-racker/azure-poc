@@ -12,6 +12,14 @@ Install Azure `az` CLI from [here](https://docs.microsoft.com/en-us/cli/azure/in
 You can run all following commands from the Azure Cloud Shell or your local terminal. If you run them locally
 make sure you have installed the above prerequisites.  
 
+## Running Terraform
+
+You can run Terraform in 2 ways:
+
+- Programmatically(non-interactive), e.g. inside a CI/CD pipeline
+
+- Interactively, e.g. from local command line
+
 ### Running Terraform programmatically(non-interactive)
 
 #### Create Azure Service Principal and log in
