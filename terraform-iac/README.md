@@ -37,8 +37,8 @@ You can run Terraform in 2 ways:
 #### Create Azure Service Principal and log in
 
 We are using authentication via Azure service 
-principal for running Terraform programmatically, for example as part of the CI/CD pipeline. we'll create use az ad sp create-for-rbac to create a service principal with a Contributor role. T
-he Contributor role (the default) has full permissions to read and write to an Azure account.
+principal for running Terraform programmatically, for example as part of the CI/CD pipeline. we'll use `az ad sp create-for-rbac` to create a service principal with a Contributor role. 
+The Contributor role has full permissions to read and write to an Azure account.
 
 `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"`
 
