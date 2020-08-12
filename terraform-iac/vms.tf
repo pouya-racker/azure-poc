@@ -91,6 +91,10 @@ resource "azurerm_windows_virtual_machine" "vm2" {
   }
 }
 
+data "template_file" "startup-script" {
+    template = "${file("startup-script.ps1")}"
+}
+
 resource "azurerm_virtual_machine_extension" "startup-script-vm1" {
   name                 = "hostname"
   virtual_machine_id   = azurerm_windows_virtual_machine.vm1.id
@@ -126,10 +130,6 @@ SETTINGS
   tags = {
     environment = "PoC"
   }
-}
-
-data "template_file" "startup-script" {
-    template = "${file("startup-script.ps1")}"
 }
 
 
