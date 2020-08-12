@@ -12,6 +12,18 @@ Install Azure `az` CLI from [here](https://docs.microsoft.com/en-us/cli/azure/in
 You can run all following commands from the Azure Cloud Shell or your local terminal. If you run them locally
 make sure you have installed the above prerequisites.  
 
+## Prerequisites
+
+This repository provisions following resources using Terraform confi files:
+
+- Resource Group
+- Virtual Network
+- Subnet
+- NSG(attached to the subnet)
+- Availability Set(consisting of 2 Windows VMs running IIS)
+
+![Azure-arch](/terraform-iac/Azure-arch.png) 
+
 ## Running Terraform
 
 You can run Terraform in 2 ways:
@@ -82,7 +94,8 @@ Your account should have proper access(e.g. `Owner` or `Contributor`) set on the
 ### Tracking state
 
 Terraform state is used to reconcile deployed resources with Terraform configurations. State allows Terraform to know what Azure resources to add, update, or delete.
-State file(terraform.tfstate) can be kept on a local machine but this approach is not suitable for working as a team member. 
+State file `terraform.tfstate` can be kept on a local machine but this approach is not suitable for working as a team member. 
+
 Recommended approach is storing and maintaining the state file in a remote storage so it can be shared between all the team members. 
 Terraform supports the persisting of state in remote storage. One such supported back end is Azure Storage. This tutorial shows how to configure and use Azure Storage for this purpose.
 
@@ -127,7 +140,9 @@ The Terraform state back end is configured when you run the `terraform init` com
 - **key**: The name of the state store file to be created.
 - **access_key**: The storage access key.
 
-Each of these values can be specified in the Terraform configuration file or on the command line. We recommend that you use an environment variable for the `access_key` value. Using an environment variable prevents the key from being written to disk.
+Each of these values can be specified in the Terraform configuration file or on the command line. 
+We recommend that you use an environment variable for the `access_key` value. 
+Using an environment variable prevents the key from being written to disk.
 
 Create an environment variable named `ARM_ACCESS_KEY` with the value of the Azure Storage access key.
 
@@ -136,6 +151,8 @@ export ARM_ACCESS_KEY=<storage access key>
 ```
 
 The following example configures a Terraform backend.
+
+Do not forget to Update the `provider.tf` file with the values you received from running the `create-storage-acc.sh` script.
 
 ```hcl
 terraform {
@@ -159,7 +176,7 @@ You can now find the state file in the Azure Storage blob.
 
 Once you create your configuration files, this section explains how to create an *execution plan* and apply it to your cloud infrastructure.
 
-1. Initialize the Terraform deployment with `terraform init`
+1. Initialize the Terraform deployment with `terraform init` if you haven't done already.
 
     ```bash
     terraform init
