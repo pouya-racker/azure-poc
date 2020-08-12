@@ -152,7 +152,7 @@ export ARM_ACCESS_KEY=<storage access key>
 
 The following example configures a Terraform backend.
 
-Do not forget to Update the `provider.tf` file with the values you received from running the `create-storage-acc.sh` script.
+Do not forget to uncomment and update the following section in `provider.tf` file with the values you received from running the `create-storage-acc.sh` script.
 
 ```hcl
 terraform {
