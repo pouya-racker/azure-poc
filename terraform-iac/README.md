@@ -217,6 +217,14 @@ terraform apply -var-file="secret.tfvars" -var-file="production.tfvars"
 Alternatively you can declare sensitive variables in the `variables.tf` file without assigning values to them in the `*.tfvars` file. 
 In this case Terraform will prompt you for missing values. This project is using this approach. 
 
+### Cleanup
+
+To cleanup the environment and delete all the resources run:
+
+```bash
+terraform destroy
+```
+
 ### Additional resources
 
 To see a full list of Terraform Azure resource definitions please see [Azure Provider](https://www.terraform.io/docs/providers/azurerm/index.html) 
