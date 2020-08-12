@@ -12,7 +12,7 @@ Install Azure `az` CLI from [here](https://docs.microsoft.com/en-us/cli/azure/in
 You can run all following commands from the Azure Cloud Shell or your local terminal. If you run them locally
 make sure you have installed the above prerequisites.  
 
-## Prerequisites
+## Infrastructure details
 
 This repository provisions following resources using Terraform confi files:
 
